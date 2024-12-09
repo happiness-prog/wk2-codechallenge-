@@ -84,3 +84,40 @@ li {
   li button:hover {
     background-color: #d4c9b9; 
   }
+  .search-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #e5d9c9;
+    border-radius: 6px;
+    width: 100%;
+}
+
+
+.manage-lists {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#new-list-name {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #e5d9c9;
+    border-radius: 6px;
+}
+
+#list-selector {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #e5d9c9;
+    border-radius: 6px;
+    background-color: #f9f8f5;
+    cursor: pointer;
+}

@@ -12,11 +12,32 @@
         <h1>Interactive shopping list</h1>
         <div class="input ">
             <input type="text" id="item-input" placeholder="Enter item name">
+            <select id="item-category">
+                <option value="General">General</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothing">Clothing</option>
+            </select>
       <button id="addbutton">Add</button>
       <button id="clearbutton">Clear List</button>
         </div>
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="Search items...">
+        </div>
         <ul id="shoppping list"></ul>
     </div>
+    <div class="container">
+        <h2>Manage Lists</h2>
+        <div class="manage-lists">
+            <input type="text" id="new-list-name" placeholder="New list name">
+            <button id="create-list-button">Create List</button>
+            <select id="list-selector">
+                <option value="default">Default</option>
+            </select>
+        </div>
+    
+
+    
     
 </body>
 </html>
