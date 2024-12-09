@@ -18,22 +18,24 @@ body {
     border:1px solid #e5d9c9;
     margin:auto;
 }
-h1{
+h1,h2{
     text-align: center;
     font-size: 25px;
     color:#4c503d;
     margin-bottom: 20px;
 }
-.input-section{
+.input-section,.search-section,.manage-lists{
     display:flex;
     gap: 10px;
     margin:20px;
+    justify-content: center;
 
 }
-#itemInput{
+#itemInput #item-category, #search-input, #new-list-name, #list-selector{
     padding:12px;
     border:1px;
     font-size: 14px;
+    width: calc(100%-120px);
 
 }
 button{
@@ -43,6 +45,10 @@ button{
     border-radius: 6px;
     font-size: 14px;
     transition: background-colour 0.3s ease;
+}
+
+button:hover {
+  background-color: #3a3f2f;
 }
 
 li {
