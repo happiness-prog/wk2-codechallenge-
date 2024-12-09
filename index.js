@@ -4,7 +4,7 @@ const addBtn = document.getElementById('addbutton');
 const clearBtn = document.getElementById('clearbutton');
 const shoppingList = document.getElementById('shoppinglist');
 
-addbutton.addEventLister('click,'()  => {
+addBtn.addEventLister('click',()  => {
     const itemText =itemInput.value.trim();
     if (itemText){
         
@@ -20,11 +20,34 @@ markPurchasedButton.addEventLister('click',()=>{
         listItem.classList.toggle('purchased')
     })
 })
-clearListButton.addEventLister('click',()=>{
+clearBtn.addEventLister('click',()=>{
     shoppingList.innerHTML=''
 })
 itemInput.addEventListener('keypress',(e)=>{
     if (e.key =='Enter'){
-        addButton.click()
+        addBtn.click()
     }
 })
+function saveToLocalStorage() {
+    const items = [...shoppingList.children].map((li) => ({
+        text: li.querySelector('span').textContent,
+        purchased: li.classList.contains('purchased'),
+    }));
+    localStorage.setItem('shoppingList', JSON.stringify(items));
+}
+
+
+function loadFromLocalStorage() {
+    const items = JSON.parse(localStorage.getItem('shoppingList')) || [];
+    items.forEach((item) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${item.text}</span>
+            <button class="delete-btn">Delete</button>
+            <input type="checkbox" class="item-checkbox" ${
+                item.purchased ? 'checked' : ''
+            }> Purchased`;
+        if (item.purchased) li.classList.add('purchased');
+        shoppingList.appendChild(li);
+    });
+}
